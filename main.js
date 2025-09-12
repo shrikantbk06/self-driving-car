@@ -22,13 +22,20 @@ if(localStorage.getItem("bestBrain")){
 }
 
 const traffic = [
-    new Car(road.getLaneCenter(1),-100,30,50,"DUMMY", 1),
-    new Car(road.getLaneCenter(0),-300,30,50,"DUMMY", 1),
-    new Car(road.getLaneCenter(2),-300,30,50,"DUMMY", 1),
-    new Car(road.getLaneCenter(0),-500,30,50,"DUMMY", 1),
-    new Car(road.getLaneCenter(1),-500,30,50,"DUMMY", 1),
-    new Car(road.getLaneCenter(1),-700,30,50,"DUMMY", 1),
-    new Car(road.getLaneCenter(2),-700,30,50,"DUMMY", 1)
+    new Car(road.getLaneCenter(1),-100,30,60,"DUMMY", 1),
+    new Car(road.getLaneCenter(0),-300,30,60,"DUMMY", 1),
+    new Car(road.getLaneCenter(2),-300,30,60,"DUMMY", 1),
+    new Car(road.getLaneCenter(0),-500,30,60,"DUMMY", 1),
+    new Car(road.getLaneCenter(1),-500,30,60,"DUMMY", 1),
+    new Car(road.getLaneCenter(1),-700,30,60,"DUMMY", 1),
+    new Car(road.getLaneCenter(2),-700,30,60,"DUMMY", 1),
+    new Car(road.getLaneCenter(1),-900,30,60,"DUMMY", 1),
+    new Car(road.getLaneCenter(2),-900,30,60,"DUMMY", 1),
+    new Car(road.getLaneCenter(1),-1100,30,60,"DUMMY", 1),
+    new Car(road.getLaneCenter(0),-1300,30,60,"DUMMY", 1),
+    new Car(road.getLaneCenter(2),-1300,30,60,"DUMMY", 1),
+    new Car(road.getLaneCenter(1),-1500,30,60,"DUMMY", 1),
+    new Car(road.getLaneCenter(2),-1700,30,60,"DUMMY", 1)
 ];
 
 
@@ -46,7 +53,7 @@ function discard(){
 function generateCars(N){
     const cars = [];
     for(let i=1;i<=N;i++){
-        cars.push(new Car(road.getLaneCenter(1),100,30,50,"AI"));
+        cars.push(new Car(road.getLaneCenter(1),100,30,60,"AI"));
     }
     return cars;
 }
@@ -71,13 +78,13 @@ function animate(time) {
     carCtx.translate(0,-bestCar.y+carCanvas.height*0.7);
     road.draw(carCtx);
     for(let i=0;i<traffic.length;i++){
-        traffic[i].draw(carCtx, "red");
+        traffic[i].draw(carCtx);
     }
 
     carCtx.globalAlpha = 0.2;
 
     for(let i=0;i<cars.length;i++){
-        cars[i].draw(carCtx, "blue");
+        cars[i].draw(carCtx);
     }
 
     carCtx.globalAlpha = 1;
