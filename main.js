@@ -18,7 +18,6 @@ if(localStorage.getItem("bestBrain")){
             NeuralNetwork.mutate(cars[i].brain,0.1);
         }
     }
-    
 }
 
 const traffic = [
